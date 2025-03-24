@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="anchorPane" onMouseClicked="#onScreenAction" prefHeight="540.0" prefWidth="945.0" style="-fx-background-color: #DADADA;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.aplicatie.UserInterfaceController">
+   <children>
+      <VBox prefHeight="542.0" prefWidth="142.0" spacing="15.0" style="-fx-background-color: #46474A;">
+         <children>
+            <HBox prefHeight="82.0" prefWidth="140.0" style="-fx-background-color: #46474A;">
+               <children>
+                  <ImageView fx:id="profilePhoto" fitHeight="89.0" fitWidth="48.0" onMouseClicked="#onProfileImage" pickOnBounds="true" preserveRatio="true" style="-fx-background-radius: 20;">
+                     <image>
+                        <Image url="@icons/add-photo.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="username" alignment="CENTER" contentDisplay="BOTTOM" prefHeight="50.0" prefWidth="90.0" text="Label" textFill="#d7d7d7">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <Line endX="40.0" startX="-100.0" strokeWidth="3.0">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </Line>
+            <ImageView fx:id="messagesImage" fitHeight="56.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@icons/chat.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="groupImage" fitHeight="56.0" fitWidth="42.0" onMouseClicked="#onAddFriendImage" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@icons/multiple-users-silhouette.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="exitImage" fitHeight="56.0" fitWidth="42.0" onMouseClicked="#onExitImage" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@icons/logout.png" />
+               </image>
+               <VBox.margin>
+                  <Insets top="270.0" />
+               </VBox.margin>
+            </ImageView>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </VBox>
+      <VBox layoutX="142.0" prefHeight="541.0" prefWidth="300.0" style="-fx-background-color: #636566;">
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="313.0" style="-fx-background-color: transparent;" text="Friends" textFill="WHITE">
+               <font>
+                  <Font name="System Italic" size="17.0" />
+               </font>
+            </Label>
+            <Line endX="440.0" startX="140.0" strokeWidth="3.0" />
+            <ListView fx:id="listOfFriends" prefHeight="542.0" prefWidth="302.0" styleClass="row-cell" stylesheets="@styles/userInterface.css" />
+         </children>
+      </VBox>
+      <Button fx:id="sendRequestButton" disable="true" layoutX="767.0" layoutY="-52.0" mnemonicParsing="false" onAction="#onSendRequestButton" text="Send request" />
+      <Button fx:id="addFriend" layoutX="657.0" layoutY="-52.0" mnemonicParsing="false" onAction="#onAddFriendButton" text="Add friend" textFill="WHITE" />
+      <VBox fx:id="friendsVbox" layoutX="445.0" layoutY="2.0" prefHeight="540.0" prefWidth="500.0" style="-fx-background-color: #DADADA;">
+         <children>
+            <HBox fx:id="addFriendHbox" alignment="CENTER" prefHeight="139.0" prefWidth="500.0" style="-fx-background-color: #DADADA;">
+               <children>
+                  <TextField fx:id="addFriendText" prefHeight="26.0" prefWidth="194.0" promptText="username" styleClass="hbox" stylesheets="@styles/style.css" />
+                  <ImageView fitHeight="31.0" fitWidth="40.0" onMouseClicked="#onSendRequestButton" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icons/add-user.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </HBox>
+            <HBox fx:id="friendsAddHbox" prefHeight="532.0" prefWidth="525.0">
+               <children>
+                  <VBox prefHeight="472.0" prefWidth="229.0">
+                     <children>
+                        <Label alignment="CENTER" prefHeight="18.0" prefWidth="229.0" text="Requests">
+                           <font>
+                              <Font name="System Bold Italic" size="12.0" />
+                           </font>
+                        </Label>
+                        <TableView fx:id="requestTable" prefHeight="450.0" prefWidth="227.0" stylesheets="@styles/userInterface.css">
+                          <columns>
+                            <TableColumn fx:id="requestName" prefWidth="181.60009765625" text="Name" />
+                            <TableColumn fx:id="stopColumn" prefWidth="51.99993896484375" text="STOP" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="478.0" prefWidth="272.0">
+                     <children>
+                        <Label alignment="CENTER" prefHeight="18.0" prefWidth="273.0" text="Pendings">
+                           <font>
+                              <Font name="System Bold Italic" size="12.0" />
+                           </font>
+                        </Label>
+                        <TableView fx:id="pendingsTable" prefHeight="450.0" prefWidth="274.0" styleClass="rightTable" stylesheets="@styles/userInterface.css">
+                          <columns>
+                            <TableColumn fx:id="pendingName" prefWidth="176.79998171329498" text="Name" />
+                            <TableColumn fx:id="accept" minWidth="0.0" prefWidth="43.199951171875" text="Accept" />
+                              <TableColumn fx:id="decline" prefWidth="54.4000244140625" text="Decline" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

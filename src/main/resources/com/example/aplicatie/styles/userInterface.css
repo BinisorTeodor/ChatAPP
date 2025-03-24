@@ -1,0 +1,91 @@
+.table-view {
+    -fx-background-color:  #DADADA;
+    -fx-table-cell-border-color: transparent;
+}
+
+.rightTable {
+    -fx-border-color :transparent transparent transparent black;
+    -fx-border-width: 0px 0px 0px 1px ;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: transparent;
+    -fx-border-color :transparent transparent black transparent;
+    -fx-border-width: 0px 0px 1px 0px ;
+    -fx-border-radius:  10px;
+}
+
+.table-view .column-header {
+    -fx-background-color: transparent;
+}
+
+.table-row-cell:empty {
+    -fx-background-color: transparent;
+}
+
+.table-row-cell:filled {
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+}
+
+.table-view .column-header-background .label {
+    -fx-text-fill: black;
+    -fx-font-style: italic;
+}
+
+.table-row-cell:filled:hover {
+    -fx-background-radius: 15px;
+    -fx-background-color:  grey;
+}
+.table-row-cell:filled:selected {
+    -fx-table-cell-border-color: transparent;
+}
+
+.table-view .cell {
+    -fx-text-fill: black;
+    -fx-font-style: italic;
+}
+
+.table-view >. virtual-flow >. scroll-bar:vertical,
+.table-view >. virtual-flow >. scroll-bar:vertical > .track,
+.table-view >. virtual-flow >. scroll-bar:vertical > .track-background,
+.table-view >. virtual-flow >. scroll-bar:horizontal,
+.table-view >. virtual-flow >. scroll-bar:horizontal > .track,
+.table-view >. virtual-flow >. scroll-bar:horizontal > .track-background {
+    -fx-opacity: 0;
+    -fx-background-color: transparent;
+}
+
+.table-view > .virtual-flow > .scroll-bar>.increment-button,
+.table-view > .virtual-flow > .scroll-bar>.decrement-button {
+    fx-opacity: 0;
+}
+
+
+.list-view  {
+    -fx-background-color:  #636566;
+    -fx-list-cell-border-color: transparent;
+}
+
+.list-view .cell {
+    -fx-text-fill: white;
+    -fx-font-style: italic;
+    -fx-font-size: 20;
+}
+
+.list-cell {
+    -fx-cell-size: 40;
+}
+
+.list-cell:filled:hover {
+    -fx-background-radius: 15px;
+    -fx-background-color:  linear-gradient(to bottom,  #43464d ,  #9d9e9d );
+}
+
+.list-cell {
+    -fx-background-color:  transparent;
+}
+
+
+
+

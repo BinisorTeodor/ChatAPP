@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="ap_main" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="601.0" prefWidth="796.0" style="-fx-background-color: #dadada;" styleClass="anchor-pane" stylesheets="@styles/chatToFriend.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.aplicatie.ChatToFriendController">
+   <children>
+      <ScrollPane fx:id="scrollPane" hbarPolicy="NEVER" layoutX="-1.0" layoutY="61.0" prefHeight="458.0" prefWidth="796.0" style="-fx-background-color: #dadada;" stylesheets="@styles/chatToFriend.css" vbarPolicy="NEVER">
+         <content>
+            <VBox fx:id="vboxMessages" alignment="CENTER" minWidth="303.0" prefHeight="430.0" prefWidth="784.0" styleClass="vbox" stylesheets="@styles/chatToFriend.css" />
+         </content>
+      </ScrollPane>
+      <HBox layoutX="-1.0" layoutY="1.0" prefHeight="59.0" prefWidth="326.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="539.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Button fx:id="back" mnemonicParsing="false" onAction="#onBackButton" prefHeight="42.0" prefWidth="34.0">
+               <HBox.margin>
+                  <Insets left="20.0" top="10.0" />
+               </HBox.margin></Button>
+            <ImageView fx:id="profilePhoto" fitHeight="42.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" style="-fx-background-radius: 20;">
+               <HBox.margin>
+                  <Insets left="30.0" top="10.0" />
+               </HBox.margin>
+               <image>
+                  <Image url="@icons/profile.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="friendName" alignment="CENTER" prefHeight="40.0" prefWidth="162.0" text="Messenger">
+               <font>
+                  <Font name="System Bold" size="28.0" />
+               </font>
+               <HBox.margin>
+                  <Insets top="10.0" />
+               </HBox.margin>
+            </Label>
+            <Button mnemonicParsing="false" onAction="#onDeleteFriend" prefHeight="26.0" prefWidth="78.0" style="-fx-background-color: transparent;">
+               <HBox.margin>
+                  <Insets left="450.0" top="10.0" />
+               </HBox.margin>
+               <graphic>
+                  <ImageView fx:id="deleteFriend" fitHeight="63.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icons/bin.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </HBox>
+      <HBox layoutX="44.0" layoutY="527.0" prefHeight="59.0" prefWidth="706.0">
+         <children>
+            <TextField fx:id="textToSend" prefHeight="50.0" prefWidth="657.0" promptText="    Type a message" styleClass="searchBar" stylesheets="@styles/chatToFriend.css" />
+            <Button fx:id="sendButton" alignment="CENTER" mnemonicParsing="false" prefHeight="51.0" prefWidth="52.0" style="-fx-background-color: transparent;" />
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

@@ -1,0 +1,29 @@
+.scroll-pane {
+    -fx-background-radius: 20px;
+    -fx-background-color: #dadada;
+
+}
+.scroll-pane > .viewport {
+    -fx-background-color: transparent;
+}
+.scroll-pane > .scroll-bar {
+    /*-fx-background-radius: 20px;*/
+    /*-fx-arrows-visible: false;*/
+    /*!*-fx-opacity: 0;*!*/
+    /*-fx-background-color: transparent;*/
+}
+
+.scroll-pane > .corner {
+    -fx-background-color:  #dadada;
+}
+
+.anchor-pane {
+    -fx-background-color:  #9d9e9d;
+}
+.vbox {
+    -fx-background-color: #dadada;
+}
+
+.searchBar {
+    -fx-background-radius: 20;
+}

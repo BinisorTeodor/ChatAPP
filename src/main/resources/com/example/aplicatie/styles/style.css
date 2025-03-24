@@ -1,0 +1,14 @@
+.root {
+    -fx-background-image: url("black.jpg");
+}
+
+.vbox {
+    -fx-background-color: #43464d;
+    -fx-background-radius: 25px;
+    -fx-opacity: 0.7;
+}
+
+.hbox {
+    -fx-background-radius: 25px;
+}
+
